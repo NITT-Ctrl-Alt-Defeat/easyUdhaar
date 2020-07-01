@@ -177,7 +177,7 @@ const ExploreCard = (props) => {
                 </div>
                 <div className={classes.payText}>
                   <Button width="30px" variant="outlined">
-                    Lend to {borrowerName}
+                    Lend
                   </Button>
                 </div>
               </Grid>
