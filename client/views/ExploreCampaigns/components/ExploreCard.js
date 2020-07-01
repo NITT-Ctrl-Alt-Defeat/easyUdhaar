@@ -17,6 +17,8 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { Button, TextField } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
+
+// import 
 import {
   // Card,
   // CardContent,
@@ -70,7 +72,7 @@ const useStyles = makeStyles(theme => ({
 const ExploreCard = (props) => {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
-
+    const uri = "/farmer.jpg";
     const handleExpandClick = () => {
         setExpanded(!expanded);
       };
@@ -79,12 +81,22 @@ const ExploreCard = (props) => {
     const amountReq= props.amountReq
     // const borrowerName= props.borrowerName;
     const campaignId= props.campaignId
-    const campaignProgress= props.campaignProgress
+    const campaignProgress= Math.trunc(props.campaignProgress*100)
     const campaignType= props.campaignType
     const creditScore= props.creditScore; 
     const date= props.date;
     const title = props.title;
-    const desc = props.desc;
+    
+    const descriptions = [
+      'to buy compost and fertilizers for maintaining five plots of coffee for harvest. As a result, she will be able to obtain better crop output.',
+      'Seeking a loan to purchase another quality breed of dairy cow that will help in producing milk and manure to be used on her farm. Milk from the cow will be sold to the local market, and this will mean improved cash flow',
+      'helps to buy taro roots and banana tube (seedlings), and chemicals, a backpack sprayer, and chainsaw.',
+      'helps to buy fertilizers and potato seeds to cultivate it in the new season.',
+      'helps to buy seeds, fertiliser and pesticide in order to grow corn.',
+      'helps a woman-owned business overcome the challenges posed by the COVID-19 crisis.',
+      'helps to pay his educational fees at the university.',
+    ];
+    const desc = props.index%descriptions.length;
     return (
       <div className={classes.card}>
         <Card className={classes.root}>
@@ -99,25 +111,37 @@ const ExploreCard = (props) => {
                 <MoreVertIcon />
               </IconButton>
             }
-            title={title}
+            title={borrowerName}
             subheader={date} //"June 14, 2020"
           />
-          <CardMedia
+          {/* <CardMedia
             className={classes.media}
-            image="../../assets/images/farmer.jpg"
-            title="Paella dish"
-          />
+            component="img"
+            image='/client/assets/images/farmer.jpg'
+            // title="Paella dish"
+          /> */}
+          {/* <img
+            src={require('farmer.jpg')}></img> */}
           <CardContent>
-            <Typography variant="h6" component="p">
-              {desc}
-              {/* Bhola is a cotton farmer based in Gondia, Madhya Pradesh */}
-            </Typography>
-            <div style={{ paddingTop: '10px' }}>
-              <Typography>
-                Amount required: {amountReq} of {amountInital}
+            <div style={{ paddingBottom: '10px' }}>
+              <Typography variant="h6" component="p">
+                {descriptions[desc]}
+                {/* Bhola is a cotton farmer based in Gondia, Madhya Pradesh */}
               </Typography>
             </div>
-            <div style={{ paddingTop: '10px' }}>
+            <div>
+              <div style={{ paddingTop: '0px' }}>
+                <Typography>
+                  Amount required: {amountReq} of {amountInital}
+                </Typography>
+              </div>
+              <div style={{ paddingTop: '0px' }}>
+                <Typography>
+                  Credit score of campaignee: {Math.trunc(creditScore)}
+                </Typography>
+              </div>
+            </div>
+            <div style={{ paddingTop: '2px' }}>
               <Typography>Campaign Progress: {campaignProgress}%</Typography>
 
               <LinearProgress

@@ -54,8 +54,8 @@ const ExploreCampaigns = () => {
   const userSession = JSON.parse(auth.getJWT());
   const token = userSession.token;
 
-  console.log(myprops);
-
+  // console.log(myprops);
+  
   useEffect(() => {
     explore(token).then((data) => {
       if (data && data.error) {
@@ -65,7 +65,7 @@ const ExploreCampaigns = () => {
       }
     });
   }, []);
-
+// console.log("myprops", myprops)
   return (
     <div className={classes.root}>
       <div style={{ padding: '20px' }}>
@@ -81,16 +81,17 @@ const ExploreCampaigns = () => {
         }
         className={classes.root}>
         <div className={classes.horiz}>
-          {myprops.map(currDetail => (
+          {myprops.map((currDetail, index) => (
             <div>
               {
                 <ExploreCard
-                  borrowerName= "bad"//{currDetail.borrowerName}
+                  borrowerName= {currDetail.borrowerName}
                   amountInital={currDetail.amountInital}
                   amountReq={currDetail.amountReq}
                   campaignId={currDetail.campaignId}
                   campaignProgress={currDetail.campaignProgress}
                   campaignType={currDetail.campaignType}
+                  index = {index}
                   creditScore={currDetail.creditScore}></ExploreCard>
               }
             </div>
