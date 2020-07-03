@@ -55,6 +55,42 @@ easyUdhaar is a **microlending** startup that **uses financial and non-financial
 2. Run `npm install`
 3. Run `npm run server`
 4. Payment server will deployed on `https://localhost:4500/`
+
+<!-- Copy and paste the converted output. -->
+
+<!-----
+NEW: Check the "Suppress top comment" option to remove this info from the output.
+
+Conversion time: 0.428 seconds.
+
+
+Using this Markdown file:
+
+1. Paste this output into your source file.
+2. See the notes and action items below regarding this conversion run.
+3. Check the rendered output (headings, lists, code blocks, tables) for proper
+   formatting and use a linkchecker before you publish this page.
+
+Conversion notes:
+
+* Docs to Markdown version 1.0β29
+* Fri Jul 03 2020 12:33:11 GMT-0700 (PDT)
+* Source doc: About Us
+* This is a partial selection. Check to make sure intra-doc links work.
+----->
+
+
+
+### Note:
+
+
+
+1. The .env file needs to be added in the root directory of the cloned repository
+2. The link for the MongoDB database URL should be set in the parameter `DB_CONNECT` 
+3. The token secret to generate Json Web Token should be set as the parameter `TOKEN_SECRET`, 
+4. The email id from which verification email has to be set in the parameter `EMAIL_ID` and password for the same will be set in `PASSWORD`.
+5. The cred folder has to be made in the directory `/server/payment/` and should include all the API keys in .pem extension and the credentials.json file has to be created to connect specified the API keys of the Visa Direct API.
+
 ## TechStack:
 
 
