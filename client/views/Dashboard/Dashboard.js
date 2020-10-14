@@ -27,8 +27,6 @@ const Dashboard = () => {
   const userSession = JSON.parse(auth.getJWT());
   const token = userSession.token;
   const role = userSession.user.role;
-  
-  // console.log(myprops);
 
   useEffect(() => {
     dashboard(token).then((data) => {
@@ -44,13 +42,12 @@ const Dashboard = () => {
   let totalAmountExpected, totalAmountGet, campaignProgress, amountRepayed;
   if(myprops !== [])
     percent = (myprops.totalAmountRecived / myprops.totalAmountLend) * 100 ;
-  // console.log(userSession.user.name);
+  
   if(myprops.returnObject) {
     totalAmountExpected = myprops.returnObject.totalAmountExpected;
     totalAmountGet = myprops.returnObject.totalAmountGet;
     campaignProgress = myprops.returnObject.campaignProgress;
     amountRepayed = myprops.returnObject.amountRepayed;
-    // console.log(myprops.returnObject);
   }
 
   return (
@@ -113,7 +110,6 @@ const Dashboard = () => {
               <AmountBorrowed
                 text="Credit Amount received"
               amount={totalAmountGet}
-              // iscash = {false}
               />
             </Grid>
           )
