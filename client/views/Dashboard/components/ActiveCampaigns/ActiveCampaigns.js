@@ -18,13 +18,11 @@ import {
   Tooltip,
   TableSortLabel
 } from '@material-ui/core';
-// import {theme} from '.';
 
 import mockData from './data';
 import auth from './../../../../auth/auth-helper';
 import { dashboard } from './../../../../auth/api-dashboard';
 import { repay } from './../../../../auth/api-payment';
-// import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -69,10 +67,6 @@ const ActiveCampaigns = props => {
   const [open, setOpen] = React.useState(false);
   const [amountgiven, setAmountgiven] = React.useState(0);
   const [lendDataId, setLendDataId] = React.useState('');
-  // const handleClickOpen = () => {
-  //   setOpen(true);
-  //   dataId
-  // };
 
   const handleClose = () => {
     setOpen(false);
@@ -82,8 +76,6 @@ const ActiveCampaigns = props => {
     setAmountgiven(event.target.value);
   }
 
-  // const [orders, setOrders] = useState(mockData);
-  // let dataId;
   const [myprops, setMyprops] = useState([]);
   const userSession = JSON.parse(auth.getJWT());
   const token = userSession.token;
@@ -105,13 +97,10 @@ const ActiveCampaigns = props => {
       lendingId: lendDataId,
       amountGiven: Number(amountgiven)
     }
-    // console.log(waladata);
-    // handleClose();
     repay(token, waladata).then((data) => {
       if(data && data.error) {
         console.log(data.error);
       } else {
-        // console.log(data);
         handleClose();
         alert("Repayment successful!");
       }
@@ -123,8 +112,6 @@ const ActiveCampaigns = props => {
   if(myprops.returnObject) {
     lenderData = myprops.returnObject.campaignLenders.campaignId;
   }
-
-
 
   return (
     <Card
