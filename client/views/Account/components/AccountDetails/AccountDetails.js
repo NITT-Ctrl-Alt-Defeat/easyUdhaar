@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import auth from './../../../../auth/auth-helper';
-// import { colors } from '@material-ui/core';
 import {
   Card,
   CardHeader,
@@ -46,21 +45,6 @@ const AccountDetails = props => {
     });
   };
 
-  // const states = [
-  //   {
-  //     value: 'alabama',
-  //     label: 'Alabama'
-  //   },
-  //   {
-  //     value: 'new-york',
-  //     label: 'New York'
-  //   },
-  //   {
-  //     value: 'san-francisco',
-  //     label: 'San Francisco'
-  //   }
-  // ];
-
   return (
     <Card
       {...rest}
@@ -75,9 +59,7 @@ const AccountDetails = props => {
           title="Profile"
         />
         <Divider />
-        <CardContent
-          // className = {classes.card}
-        >
+        <CardContent>
           <Grid
             container
             spacing={3}
@@ -147,50 +129,6 @@ const AccountDetails = props => {
                 variant="outlined"
               />
             </Grid>
-            {/* <Grid
-              item
-              md={6}
-              xs={12}
-            >
-              <TextField
-                fullWidth
-                label="Select State"
-                margin="dense"
-                name="state"
-                onChange={handleChange}
-                required
-                select
-                // eslint-disable-next-line react/jsx-sort-props
-                SelectProps={{ native: true }}
-                value={values.state}
-                variant="outlined"
-              >
-                {states.map(option => (
-                  <option
-                    key={option.value}
-                    value={option.value}
-                  >
-                    {option.label}
-                  </option>
-                ))}
-              </TextField>
-            </Grid>
-            <Grid
-              item
-              md={6}
-              xs={12}
-            >
-              <TextField
-                fullWidth
-                label="Country"
-                margin="dense"
-                name="country"
-                onChange={handleChange}
-                required
-                value={values.country}
-                variant="outlined"
-              />
-            </Grid> */}
           </Grid>
         </CardContent>
         <Divider />

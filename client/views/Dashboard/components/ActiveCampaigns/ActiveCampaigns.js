@@ -19,7 +19,6 @@ import {
   TableSortLabel
 } from '@material-ui/core';
 
-import mockData from './data';
 import auth from './../../../../auth/auth-helper';
 import { dashboard } from './../../../../auth/api-dashboard';
 import { repay } from './../../../../auth/api-payment';
@@ -79,7 +78,6 @@ const ActiveCampaigns = props => {
   const [myprops, setMyprops] = useState([]);
   const userSession = JSON.parse(auth.getJWT());
   const token = userSession.token;
-  const role = userSession.user.role;
 
   useEffect(() => {
     dashboard(token).then((data) => {
