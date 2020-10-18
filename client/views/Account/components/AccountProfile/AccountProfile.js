@@ -16,9 +16,6 @@ import {
 } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    // backgroundColor: '#F06292'
-  },
   details: {
     display: 'flex'
   },
@@ -42,9 +39,7 @@ const useStyles = makeStyles(theme => ({
 
 const AccountProfile = props => {
   const { className, ...rest } = props;
-
   const classes = useStyles();
-
   const userSession = JSON.parse(auth.getJWT());
 
   const user = {
@@ -106,7 +101,6 @@ const AccountProfile = props => {
           className={classes.uploadButton}
           color="primary"
           variant="outlined"
-
         >
           Upload picture
         </Button>

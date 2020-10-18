@@ -6,7 +6,6 @@ import FirstStep from './components/FirstStep';
 import SecondStep from './components/SecondStep';
 import Confirm from './components/Confirm';
 import Success from './components/Success';
-import { makeStyles, useTheme } from '@material-ui/styles';
 
 // Step titles
 const labels = [ 'Personal Information', 'Business Details', 'Confirmation' ];

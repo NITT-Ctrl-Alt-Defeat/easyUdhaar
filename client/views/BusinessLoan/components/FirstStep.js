@@ -58,8 +58,6 @@ const FirstStep = ({
 
 	return (
     <Container className={classes.paper}>
-      {/* <Grid container spacing={2} noValidate> */}
-      {/* <Grid item xs={12} sm={6}> */}
       <Row>
         <div className={classes.inner}>
           <TextField
@@ -74,8 +72,6 @@ const FirstStep = ({
             required
           />
         </div>
-        {/* </Grid> */}
-        {/* <Grid item xs={12} sm={6}> */}
         <div className={classes.inner}>
           <TextField
             className={classes.form}
@@ -90,9 +86,6 @@ const FirstStep = ({
           />
         </div>
       </Row>
-      {/* </Grid> */}
-
-      {/* <Grid item xs={12} sm={6}> */}
       <div className={classes.inner}>
         <TextField
           className={classes.form}
@@ -106,8 +99,6 @@ const FirstStep = ({
           margin="normal"
           required
         />
-        {/* </Grid> */}
-        {/* <Grid item xs={12} sm={6}> */}
       </div>
       <div className={classes.inner}>
         <FormControl
@@ -122,11 +113,6 @@ const FirstStep = ({
           </Select>
         </FormControl>
       </div>
-
-      {/* </Grid> */}
-
-      {/* <Grid item xs={12} sm={6}> */}
-
       <div className={classes.inner}>
         <TextField
           className={classes.form}
@@ -140,9 +126,6 @@ const FirstStep = ({
           required
         />
       </div>
-
-      {/* </Grid> */}
-      {/* </Grid> */}
       <div
         style={{
           display: 'flex',
@@ -152,7 +135,6 @@ const FirstStep = ({
         }}>
         <Button
           variant="contained"
-          //   variant="outlined"
           color="primary"
           onClick={handleNext}>
           Next
