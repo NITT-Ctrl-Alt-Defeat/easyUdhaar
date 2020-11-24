@@ -8,3 +8,4 @@
 npm-debug.log
 .env
 /server/payment/node_modules
+/package-lock.json
